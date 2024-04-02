@@ -1,23 +1,6 @@
-// Função para verificar se é a primeira vez que o usuário acessa a página
-function isFirstVisit() {
-  return localStorage.getItem('visited') === null;
-}
-
-// Função para reproduzir o som de início do Windows na primeira visita
-function playStartSound() {
-  let audio = new Audio('./assets/sounds/windows-start.mp3');
-  audio.play();
-}
-
-// Verifica se é a primeira visita
-if (isFirstVisit()) {
-  playStartSound();
-  localStorage.setItem('visited', true);
-}
-
 // Atualizar o relógio a cada segundo (1000 milissegundos)
 function updateClock() {
-  const currentTime = new Date().toLocaleTimeString("pt-BR", {
+  const currentTime = new Date().toLocaleTimeString("en", {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
@@ -89,4 +72,3 @@ document.getElementById("portfolioButton").addEventListener("click", function() 
   this.classList.add("bg-white");
   document.getElementById("startButton").classList.remove("bg-white");
 });
-
