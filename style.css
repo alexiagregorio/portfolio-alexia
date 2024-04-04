@@ -342,7 +342,14 @@ q::after {
   align-items: center;
   justify-content: center;
   gap: 1rem; 
-  margin-bottom: 6rem; 
+}
+
+.custom-visitors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+  margin-bottom: 5rem; 
 }
 
 .custom-footer {
