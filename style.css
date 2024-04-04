@@ -415,3 +415,45 @@ q::after {
   background-color: white;
   border-color:grey;
 }
+
+.window-pop {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 204, 232, 1) 28%,
+    #FFC9E0 96%
+  );
+  border-width: 2px;
+  border-style: solid;
+  border-color: black white white black ;
+  position: absolute;
+}
+
+.window-ul {
+  justify-content: flex-end;
+  list-style-type: none; 
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0.25rem;
+}
+
+.window-ul > * + * {
+  margin-left: 0.25rem; 
+}
+
+.about-me {
+  position: absolute;
+  left: 1rem;
+}
+
+.windows-tab {
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #ffffff; 
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px; 
+  margin: 20px; 
+}
