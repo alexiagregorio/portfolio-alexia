@@ -14,16 +14,33 @@ setInterval(updateClock, 1000);
 
 //Atualizar anos de experiencia
 const startYear = 2023;
-const currentYear = new Date().getFullYear();
+const startMonth = 3; 
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+
 const yearsWorking = document.getElementById("years-working");
 
-const yearsDifference = currentYear - startYear;
+let yearsDifference = currentYear - startYear;
+let monthsDifference = currentMonth - startMonth;
 
-if (yearsDifference <= 1) {
-    yearsWorking.innerHTML = `${yearsDifference} year`;
-} else {
-    yearsWorking.innerHTML = `${yearsDifference} years`;
+if (monthsDifference < 0) {
+    yearsDifference--; 
+    monthsDifference += 12; 
 }
+
+let result = "";
+if (yearsDifference > 0) {
+    result += `${yearsDifference} year${yearsDifference > 1 ? 's' : ''}`;
+}
+if (monthsDifference > 0) {
+    if (yearsDifference > 0) {
+        result += " and ";
+    }
+    result += `${monthsDifference} month${monthsDifference > 1 ? 's' : ''}`;
+}
+
+yearsWorking.innerHTML = result;
 
 //Tocar som de erro
 function playWindowsSound() {
